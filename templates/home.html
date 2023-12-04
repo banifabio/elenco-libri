@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Elenco libri" %}{% endblock %}
+
+{% block content %}
+  <h1>
+    <a href="{% url 'mainpage' %}"><img src="{% static 'icons/favicon.png' %}" width="30" height="30" alt=""></a>
+    {% trans "Elenco libri" %}
+  </h1>
+  <ul>
+    <li><a href="{% url 'listpage' %}">{% trans "Consulta elenco" %}</a></li>
+    <li><a href="{% url 'addbookpage' %}">{% trans "Aggiungi libro" %}</a></li>
+    <li><a href="{% url 'addlistpage' %}">{% trans "Aggiungi lista" %}</a></li>
+    <li><a href="{% url 'exportlistpage' %}">{% trans "Esporta lista" %}</a></li>
+    <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+  </ul>
+{% endblock %}
+
+{% comment %}{% endcomment %}

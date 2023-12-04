@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Risultati ricerca" %}{% endblock %}
+
+{% block content %}
+  <h1>
+    <a href="{% url 'mainpage' %}"><img src="{% static 'icons/favicon.png' %}" width="30" height="30" alt=""></a>
+    {% trans "Risultati ricerca" %}
+  </h1>
+
+  {% for result in results %}
+    <p>{{result}}</p>
+  {% endfor %}
+
+{% endblock %}
+
+{% comment %}{% endcomment %}

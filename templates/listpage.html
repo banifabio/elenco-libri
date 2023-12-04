@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Ricerca libri" %}{% endblock %}
+
+{% block content %}
+  <h1>
+    <a href="{% url 'mainpage' %}"><img src="{% static 'icons/favicon.png' %}" width="30" height="30" alt=""></a>
+    {% trans "Ricerca libri" %}
+  </h1>
+
+  <form method="POST" action="{% url 'search' %}">
+    {% csrf_token %}
+    {{ search_form.as_p }}
+    <button type="submit">{% trans "Cerca" %}</button>
+  </form>
+
+
+{% endblock %}
+
+{% comment %}{% endcomment %}
